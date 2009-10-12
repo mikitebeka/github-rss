@@ -1,0 +1,8 @@
+#!/bin/bash
+
+login=$(grep login config.py | tr -d ' ,"')
+token=$(grep token config.py | tr -d ' ,"')
+
+curl -s -F "$login" -F "$token" \
+    https://github.com/api/v2/json/commits/list/saucelabs/sauce/master | \
+    python -c 'from json.tool import main; main()'

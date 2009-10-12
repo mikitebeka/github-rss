@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "usage: $(basename $0) ID"
+    exit 1
+fi
+
+login=$(grep login config.py | tr -d ' ,"')
+token=$(grep token config.py | tr -d ' ,"')
+id=$1
+
+curl -s -F "$login" -F "$token" \
+    "https://github.com/api/v2/json/commits/show/saucelabs/sauce/$1" | \
+    python -c 'from json.tool import main; main()'
