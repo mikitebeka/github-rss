@@ -1,3 +1,5 @@
-config.py
 *.py[co]
 *.sw[po]
+commits.db
+config.py
+githubrss.log
