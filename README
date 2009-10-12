@@ -1,1 +1,7 @@
 Publish github commits RSS *with* diffs
+
+To create the database, just run make.
+You need to have a `config.py` in the following format:
+
+    login = "<github-login>",
+    token = "<github-key>"
