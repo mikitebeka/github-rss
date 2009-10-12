@@ -1,1 +1,3 @@
 config.py
+*.py[co]
+*.sw[po]
