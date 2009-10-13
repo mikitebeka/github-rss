@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
 from urllib import urlopen, urlencode
-import json
+try:
+    import json
+except ImportError:
+    import simplejson as json
 import sqlite3
 from time import strptime, mktime, sleep, strftime
 import config
